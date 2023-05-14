@@ -12,7 +12,7 @@ data "aws_ssm_parameter" "ami" {
 
 # NETWORKING #
 resource "aws_vpc" "nor-nv-vpc" {
-  cidr_block           = "10.20.0.0/20"
+  cidr_block           = var.vpc_cidr
   enable_dns_hostnames = true
   enable_dns_support   = true
   instance_tenancy = "default"

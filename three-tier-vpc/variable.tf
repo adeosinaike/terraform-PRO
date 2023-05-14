@@ -10,3 +10,8 @@ variable "subnets_cidr_block" {
   description = "description"
 }
 
+variable "vpc_cidr" {
+  type        = string
+  default     = "10.20.0.0/20"
+  description = "description"
+}
