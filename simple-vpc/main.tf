@@ -92,8 +92,8 @@ resource "aws_security_group" "web-server-sg" {
 resource "aws_instance" "web_server" {
   ami                    = nonsensitive(data.aws_ssm_parameter.ami.value)
   instance_type          = "t2.micro"
-  subnet_id              = aws_subnet.subnet1.id
-  vpc_security_group_ids = [aws_security_group.nginx-sg.id]
+  subnet_id              = aws_subnet.public_subnet_a.id
+  vpc_security_group_ids = [aws_security_group.web-server-sg.id]
 
   user_data = <<EOF
 #! /bin/bash
